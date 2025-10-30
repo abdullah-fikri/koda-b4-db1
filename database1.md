@@ -11,7 +11,7 @@ erDiagram
     }
 
     rak_buku {
-        string kode
+        string kode_rak_buku
         string kategori
     }
     petugas {
@@ -25,8 +25,8 @@ erDiagram
         string waktu_kembalikan
     }
 
-    buku ||--o{ kategori : di_kategorikan
-    rak_buku ||--o{ kategori : ditaruh_di
+    buku ||--o{ kategori : mempunyai
+    rak_buku ||--o{ buku : ditaruh_di
     peminjam }O --o{ rak_buku : milih_buku
     petugas || -- || peminjam : konfirmasi
 
